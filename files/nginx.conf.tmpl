@@ -20,6 +20,12 @@ http {
 
     include /etc/nginx/conf.d/*.conf;
 
+    location ##HEALTH_PATH## {
+      proxy_pass ##PROXY_PASS##;
+
+      proxy_set_header X-Forwarded-Host $host;
+    }
+    
     location / {
       proxy_pass ##PROXY_PASS##;
       auth_basic "Restricted";

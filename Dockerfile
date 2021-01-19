@@ -10,6 +10,7 @@ ENV PORT 80
 ENV CLIENT_MAX_BODY_SIZE 1m
 ENV PROXY_READ_TIMEOUT 60s
 ENV WORKER_PROCESSES auto
+ENV HEALTH_PATH /health
 
 COPY files/run.sh /
 COPY files/nginx.conf.tmpl /
